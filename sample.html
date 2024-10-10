@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS Facebook-like Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-200 flex items-center justify-center min-h-screen">
+    
+    <!-- Button to open modal -->
+    <div>
+        <label for="actionButton" class="bg-blue-500 text-white px-3 py-2 rounded hover:bg-blue-600 cursor-pointer transition duration-300">View Profile</label>
+    </div>
+
+    <!-- Hidden checkbox to control modal visibility -->
+    <input type="checkbox" id="actionButton" class="hidden">
+
+    <!-- Modal Background -->
+    <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 transition-opacity duration-300 opacity-0 pointer-events-none" id="modal">
+
+        <!-- Modal Content -->
+        <div class="bg-white rounded-lg shadow-lg max-w-4xl w-full p-6 relative max-h-screen overflow-y-auto">
+            
+            <!-- Cover Photo Section -->
+            <section class="relative">
+                <!-- Fallback background color if image isn't available -->
+                <div class="h-48 w-full bg-gray-300 object-cover rounded-t-lg"></div>
+                <div class="h-28 w-28 bg-gray-400 rounded-full border-4 border-white absolute bottom-[-40px] left-8"></div> <!-- Placeholder profile picture -->
+            </section>
+            
+            <!-- Profile Info Section -->
+            <section class="mt-16 flex items-center justify-between px-8">
+                <div>
+                    <h2 class="text-2xl font-bold">Ivan Petrov</h2>
+                    <h3 class="text-gray-500">Software Engineer at Sinks R Us</h3>
+                </div>
+                <!-- Right-side buttons -->
+                <div class="flex space-x-4">
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Copy Link</button>
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">View Profile</button>
+                </div>
+            </section>
+
+            <!-- Modal Body -->
+            <section class="mt-6 px-8">
+                <section class="flex flex-row items-center justify-stretch">
+                    <p class="text-gray-600 w-40"><strong>Sex:</strong></p>
+                    <p class="bg-white shadow-inner border border-gray-300 text-gray-600 text-center rounded-lg px-5 py-2 text-sm sm:text-base whitespace-nowrap w-full">Male</p>
+                </section>
+
+                <section class="flex flex-row items-center justify-stretch mt-2">
+                    <p class="text-gray-600 w-40"><strong>Address:</strong></p>
+                    <p class="bg-white shadow-inner border border-gray-300 text-gray-600 text-center rounded-lg px-5 py-2 text-sm sm:text-base whitespace-nowrap w-full">12 Red Square, Moscow</p>
+                </section>
+
+                <section class="flex flex-row items-center justify-stretch mt-2">
+                    <p class="text-gray-600 w-40"><strong>Contact No.</strong></p>
+                    <p class="bg-white shadow-inner border border-gray-300 text-gray-600 text-center rounded-lg px-5 py-2 text-sm sm:text-base whitespace-nowrap w-full">555-6789</p>
+                </section>
+
+                <section class="flex flex-row items-center justify-stretch mt-2">
+                    <p class="text-gray-600 w-40"><strong>Marital Status:</strong></p>
+                    <p class="bg-white shadow-inner border border-gray-300 text-gray-600 text-center rounded-lg px-5 py-2 text-sm sm:text-base whitespace-nowrap w-full">Single</p>
+                </section>
+
+                <section class="flex flex-row items-center justify-stretch mt-2">
+                    <p class="text-gray-600 w-40"><strong>Department:</strong></p>
+                    <p class="bg-white shadow-inner border border-gray-300 text-gray-600 text-center rounded-lg px-5 py-2 text-sm sm:text-base whitespace-nowrap w-full">IT</p>
+                </section>
+
+                <section class="flex flex-row items-center justify-stretch mt-2">
+                    <p class="text-gray-600 w-40"><strong>Job Title:</strong></p>
+                    <p class="bg-white shadow-inner border border-gray-300 text-gray-600 text-center rounded-lg px-5 py-2 text-sm sm:text-base whitespace-nowrap w-full">Software Engineer</p>
+                </section>
+            </section>
+
+            <!-- Close Button -->
+            <label for="actionButton" class="absolute top-3 right-3 text-gray-500 hover:text-gray-700 cursor-pointer text-3xl">&times;</label>
+        </div>
+    </div>
+
+    <style>
+        /* When the checkbox is checked, show the modal */
+        input:checked ~ #modal {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</body>
+</html>
